@@ -2,13 +2,7 @@ name: Testing
 
 on:
   push:
-    branches:
-      - master
-      - 'dependabot/**'
-      - v14 # TODO: Remove when releasing v14.
   pull_request:
-    branches:
-      - '**'
 
 jobs:
   test:
@@ -45,7 +39,6 @@ jobs:
 
   coverage:
     name: Coverage on Node.js ${{ matrix.node }} and ${{ matrix.os }}
-
     runs-on: ${{ matrix.os }}
 
     strategy:
